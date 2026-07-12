@@ -1,3 +1,7 @@
+output "stack_hci_marketplace_gallery_images_id" {
+  description = "Map of id values across all stack_hci_marketplace_gallery_images, keyed the same as var.stack_hci_marketplace_gallery_images"
+  value       = { for k, v in azurerm_stack_hci_marketplace_gallery_image.stack_hci_marketplace_gallery_images : k => v.id }
+}
 output "stack_hci_marketplace_gallery_images_custom_location_id" {
   description = "Map of custom_location_id values across all stack_hci_marketplace_gallery_images, keyed the same as var.stack_hci_marketplace_gallery_images"
   value       = { for k, v in azurerm_stack_hci_marketplace_gallery_image.stack_hci_marketplace_gallery_images : k => v.custom_location_id }
