@@ -12,7 +12,7 @@ output "stack_hci_marketplace_gallery_images_hyperv_generation" {
 }
 output "stack_hci_marketplace_gallery_images_identifier" {
   description = "Map of identifier values across all stack_hci_marketplace_gallery_images, keyed the same as var.stack_hci_marketplace_gallery_images"
-  value       = { for k, v in azurerm_stack_hci_marketplace_gallery_image.stack_hci_marketplace_gallery_images : k => v.identifier if v.identifier != null && length(v.identifier) > 0 }
+  value       = { for k, v in azurerm_stack_hci_marketplace_gallery_image.stack_hci_marketplace_gallery_images : k => one(v.identifier) if v.identifier != null && length(v.identifier) > 0 }
 }
 output "stack_hci_marketplace_gallery_images_location" {
   description = "Map of location values across all stack_hci_marketplace_gallery_images, keyed the same as var.stack_hci_marketplace_gallery_images"
